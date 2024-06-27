@@ -50,3 +50,9 @@ jobs:
 
     - name: Build solution
       run: msbuild SimpleAdsClient.sln -t:rebuild -property:Configuration=Release
+
+    - name: Create artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: SimpleAdsClient
+        path: bin/Release/
