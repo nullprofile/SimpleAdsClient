@@ -5,16 +5,15 @@ on:
   pull_request:
     branches: [ main ]
 
-  jobs:
-
-    build:
-      name: Build Artifacts
-      runs-on: windows-latest
-      steps:
-        - uses: actions/checkout@v4
-        - name: Setup dotnet
-          uses: actions/setup-dotnet@v3
-          with:
-            dotnet-version: '8.0'
-        - name: Install ADS dependency
-          run: dotnet add package Beckhoff.TwinCAT.Ads --version 6.1.244
+jobs:
+  build:
+    name: Build Artifacts
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0'
+      - name: Install ADS dependency
+        run: dotnet add package Beckhoff.TwinCAT.Ads --version 6.1.244
